@@ -1,0 +1,61 @@
+sources:
+
+  - id: "bare_1"
+    name: "bare_1"
+    size_x: 120
+    size_y: 87
+    pivot_x: 60
+    pivot_y: 80
+  - id: "covered_1"
+    name: "covered_1"
+    size_x: 120
+    size_y: 87
+    pivot_x: 60
+    pivot_y: 80
+
+skeletons:
+
+  - id: "bare"
+    scale: 0.01
+    bones:
+      - id: "main"
+        pose:
+          source_id: "bare_1"
+
+  - id: "covered"
+    scale: 0.01
+    bones:
+      - id: "main"
+        pose:
+          source_id: "covered_1"
+
+animations:
+
+  - id: "bare-idle"
+    skeleton_id: "bare"
+    length: 1.0
+    keys:
+      idle: 0.0
+    muscles: []
+
+  - id: "covered-idle"
+    skeleton_id: "covered"
+    length: 1.0
+    keys:
+      idle: 0.0
+    muscles: []
+
+selection:
+
+  - variant: "default"
+    action: "idle"
+    animation: "bare-idle"
+
+  - variant: "bare"
+    action: "idle"
+    animation: "bare-idle"
+
+  - variant: "covered"
+    action: "idle"
+    animation: "covered-idle"
+

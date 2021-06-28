@@ -1,0 +1,62 @@
+sources:
+
+  - id: "spruce"
+    name: "spruce"
+    size_x: 200
+    size_y: 261
+    pivot_x: 100
+    pivot_y: 250
+
+skeletons:
+
+  - id: "base"
+    scale: 0.01
+    bones:
+      - id: "main"
+        pose:
+          source_id: "spruce"
+
+animations:
+
+  - id: "default-idle"
+    skeleton_id: "base"
+    length: 1.0
+    keys:
+      idle: 0.0
+    muscles: []
+
+  - id: "default-damaged"
+    skeleton_id: "base"
+    is_looped: false
+    length: 0.8
+    keys:
+      ok: 0.0
+      left1: 0.1
+      right1: 0.3
+      left2: 0.5
+      right2: 0.7
+    muscles:
+      - bone_id: "main"
+        timeline:
+          - key: ok
+            angle: 0
+          - key: left1
+            angle: 0.02
+          - key: right1
+            angle: -0.02
+          - key: left2
+            angle: 0.01
+          - key: right2
+            angle: -0.01
+
+selection:
+
+  - variant: "default"
+    action: "idle"
+    animation: "default-idle"
+
+  - variant: "default"
+    action: "damaged"
+    animation: "default-damaged"
+
+
